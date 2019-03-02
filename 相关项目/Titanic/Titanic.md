@@ -2,7 +2,7 @@
 # TITANIC 乘客生还率影响因素分析
 
 > * 分析目的：通过kaggle上Titanic项目的训练集，探究‘ Titanic号上乘客生还率影响因素 ’，并进行进行描述性分析  
-* 分析思路：先观察对乘客生还率可能造成影响的因素组成，再对各影响因素单独进行分析，观察影响情况，  
+> * 分析思路：先观察对乘客生还率可能造成影响的因素组成，再对各影响因素单独进行分析，观察影响情况，  
 最后对各影响因素组合分析，分析各影响因素的影响程度，从而确定出影响乘客生还率的关键点
 
 
@@ -130,20 +130,7 @@ ti.describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -231,7 +218,7 @@ ti.describe()
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -392,20 +379,7 @@ ti[ti.Embarked.isnull()].T
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -472,7 +446,7 @@ ti[ti.Embarked.isnull()].T
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -487,20 +461,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==3)]
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -591,7 +552,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==3)]
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -603,20 +564,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==2)]
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -731,7 +679,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==2)]
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -743,20 +691,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==1)]
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1142,7 +1077,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==1)]
   </tbody>
 </table>
 <p>176 rows × 3 columns</p>
-</div>
+
 
 
 
@@ -1158,20 +1093,7 @@ ti[cabin_b==True][['Cabin','Embarked','Pclass']].sort_values(by='Cabin')
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1472,7 +1394,7 @@ ti[cabin_b==True][['Cabin','Embarked','Pclass']].sort_values(by='Cabin')
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -1549,20 +1471,7 @@ ti.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1653,7 +1562,7 @@ ti.head()
     </tr>
   </tbody>
 </table>
-</div>
+
 
 
 
@@ -2061,6 +1970,6 @@ ax.set_ylim(0,300)
 ## 2. 改进建议
 
 > * 因年龄缺失值较多，所用均值填充的办法会使年龄集中于均值，影响后续的分析准确度，可考虑其他填充方式
-* 对Name，Ticket，Cabin等字段，直接分析较难，但可结合相关历史资料，进行辅助分析 
-* 所用数据集仅为训练集，只占总乘客数的1/3，叠加上测试集能使结果更为准确
-* 可考虑使用机器学习的相关算法做预测，进一步佐证描述性分析
+> * 对Name，Ticket，Cabin等字段，直接分析较难，但可结合相关历史资料，进行辅助分析 
+> * 所用数据集仅为训练集，只占总乘客数的1/3，叠加上测试集能使结果更为准确
+> * 可考虑使用机器学习的相关算法做预测，进一步佐证描述性分析
