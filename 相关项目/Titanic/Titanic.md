@@ -2,7 +2,7 @@
 # TITANIC 乘客生还率影响因素分析
 
 > * 分析目的：通过kaggle上Titanic项目的训练集，探究‘ Titanic号上乘客生还率影响因素 ’，并进行进行描述性分析  
-* 分析思路：先观察对乘客生还率可能造成影响的因素组成，再对各影响因素单独进行分析，观察影响情况，  
+> * 分析思路：先观察对乘客生还率可能造成影响的因素组成，再对各影响因素单独进行分析，观察影响情况，  
 &emsp;&emsp;&emsp;&emsp;&emsp;最后对各影响因素组合分析，分析各影响因素的影响程度，从而确定出影响乘客生还率的关键点
 
 
@@ -132,19 +132,6 @@ ti.describe()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
