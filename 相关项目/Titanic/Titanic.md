@@ -2,8 +2,8 @@
 # TITANIC 乘客生还率影响因素分析
 
 > * 分析目的：通过kaggle上Titanic项目的训练集，探究‘ Titanic号上乘客生还率影响因素 ’，并进行进行描述性分析  
-> * 分析思路：先观察对乘客生还率可能造成影响的因素组成，再对各影响因素单独进行分析，观察影响情况，  
-最后对各影响因素组合分析，分析各影响因素的影响程度，从而确定出影响乘客生还率的关键点
+* 分析思路：先观察对乘客生还率可能造成影响的因素组成，再对各影响因素单独进行分析，观察影响情况，  
+&emsp;&emsp;&emsp;&emsp;&emsp;最后对各影响因素组合分析，分析各影响因素的影响程度，从而确定出影响乘客生还率的关键点
 
 
 
@@ -24,6 +24,7 @@ import matplotlib.pyplot as plt
 % matplotlib inline
 plt.rcParams['figure.figsize'] = (15, 8)
 plt.rcParams['font.sans-serif'] =['SimHei']
+plt.style.use('ggplot')
 ```
 
 
@@ -130,7 +131,20 @@ ti.describe()
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -218,7 +232,7 @@ ti.describe()
     </tr>
   </tbody>
 </table>
-
+</div>
 
 
 
@@ -332,9 +346,9 @@ ti[['Age_case1','Age_case2','Age_case3']].plot.hist(subplots=True,layout=(1,3),a
 
 
 
-    array([[<matplotlib.axes._subplots.AxesSubplot object at 0x000002A28AE76748>,
-            <matplotlib.axes._subplots.AxesSubplot object at 0x000002A28B13AF98>,
-            <matplotlib.axes._subplots.AxesSubplot object at 0x000002A28B16E0F0>]],
+    array([[<matplotlib.axes._subplots.AxesSubplot object at 0x000001F9185706D8>,
+            <matplotlib.axes._subplots.AxesSubplot object at 0x000001F918B25198>,
+            <matplotlib.axes._subplots.AxesSubplot object at 0x000001F918B4F2B0>]],
           dtype=object)
 
 
@@ -352,7 +366,7 @@ ti[['Age_case1','Age_case2','Age_case3']].plot.hist(alpha=0.6,bins=20,grid=True)
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x2a28b5577b8>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1f918f2b940>
 
 
 
@@ -379,7 +393,20 @@ ti[ti.Embarked.isnull()].T
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -446,7 +473,7 @@ ti[ti.Embarked.isnull()].T
     </tr>
   </tbody>
 </table>
-
+</div>
 
 
 
@@ -461,7 +488,20 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==3)]
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -552,7 +592,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==3)]
     </tr>
   </tbody>
 </table>
-
+</div>
 
 
 
@@ -564,7 +604,20 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==2)]
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -679,7 +732,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==2)]
     </tr>
   </tbody>
 </table>
-
+</div>
 
 
 
@@ -691,7 +744,20 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==1)]
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1077,7 +1143,7 @@ ti[['Cabin','Pclass','Embarked']][(ti.Cabin.notnull()) & (ti.Pclass==1)]
   </tbody>
 </table>
 <p>176 rows × 3 columns</p>
-
+</div>
 
 
 
@@ -1093,7 +1159,20 @@ ti[cabin_b==True][['Cabin','Embarked','Pclass']].sort_values(by='Cabin')
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1394,7 +1473,7 @@ ti[cabin_b==True][['Cabin','Embarked','Pclass']].sort_values(by='Cabin')
     </tr>
   </tbody>
 </table>
-
+</div>
 
 
 
@@ -1471,7 +1550,20 @@ ti.head()
 
 
 
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1562,7 +1654,7 @@ ti.head()
     </tr>
   </tbody>
 </table>
-
+</div>
 
 
 
@@ -1638,7 +1730,7 @@ plt.legend(())
 
 
 
-    <matplotlib.legend.Legend at 0x2a28be6ac18>
+    <matplotlib.legend.Legend at 0x1f9199adf98>
 
 
 
@@ -1659,7 +1751,7 @@ plt.legend(())
 
 
 
-    <matplotlib.legend.Legend at 0x2a28be74f98>
+    <matplotlib.legend.Legend at 0x1f919c4a898>
 
 
 
@@ -1678,7 +1770,7 @@ ti[['Age']].plot.hist(grid=True,bins=20,alpha=0.7,title='乘客年龄分布情�
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x2a28c7f8ac8>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1f919c01048>
 
 
 
@@ -1696,7 +1788,7 @@ ti[['Fare']].plot.hist(grid=True,bins=20,title='乘客票价分布情况')
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x2a28c8ad080>
+    <matplotlib.axes._subplots.AxesSubplot at 0x1f91a28fcc0>
 
 
 
@@ -1729,16 +1821,16 @@ plt.yticks(np.linspace(0,0.7,10,endpoint=True))
 
 
 
-    ([<matplotlib.axis.YTick at 0x2a28ccc1358>,
-      <matplotlib.axis.YTick at 0x2a28ccbbbe0>,
-      <matplotlib.axis.YTick at 0x2a28cd261d0>,
-      <matplotlib.axis.YTick at 0x2a28cd26630>,
-      <matplotlib.axis.YTick at 0x2a28cd1ecf8>,
-      <matplotlib.axis.YTick at 0x2a28cd26c50>,
-      <matplotlib.axis.YTick at 0x2a28cd26da0>,
-      <matplotlib.axis.YTick at 0x2a28cd2e320>,
-      <matplotlib.axis.YTick at 0x2a28ccc1c50>,
-      <matplotlib.axis.YTick at 0x2a28cd2eda0>],
+    ([<matplotlib.axis.YTick at 0x1f91a7034e0>,
+      <matplotlib.axis.YTick at 0x1f91a6fed68>,
+      <matplotlib.axis.YTick at 0x1f91a755128>,
+      <matplotlib.axis.YTick at 0x1f91a766710>,
+      <matplotlib.axis.YTick at 0x1f91a75fe48>,
+      <matplotlib.axis.YTick at 0x1f91a766c50>,
+      <matplotlib.axis.YTick at 0x1f91a766160>,
+      <matplotlib.axis.YTick at 0x1f91a770400>,
+      <matplotlib.axis.YTick at 0x1f91a6cd8d0>,
+      <matplotlib.axis.YTick at 0x1f91a770e10>],
      <a list of 10 Text yticklabel objects>)
 
 
@@ -1760,16 +1852,16 @@ plt.yticks(np.linspace(0,0.8,10,endpoint=True))
 
 
 
-    ([<matplotlib.axis.YTick at 0x2a28cd99e48>,
-      <matplotlib.axis.YTick at 0x2a28cd99710>,
-      <matplotlib.axis.YTick at 0x2a28cdf8dd8>,
-      <matplotlib.axis.YTick at 0x2a28cdf8278>,
-      <matplotlib.axis.YTick at 0x2a28cddeac8>,
-      <matplotlib.axis.YTick at 0x2a28ce00710>,
-      <matplotlib.axis.YTick at 0x2a28ce00d30>,
-      <matplotlib.axis.YTick at 0x2a28ce082b0>,
-      <matplotlib.axis.YTick at 0x2a28ce087f0>,
-      <matplotlib.axis.YTick at 0x2a28cd9f780>],
+    ([<matplotlib.axis.YTick at 0x1f91a7dcf98>,
+      <matplotlib.axis.YTick at 0x1f91a7dc860>,
+      <matplotlib.axis.YTick at 0x1f91a839f28>,
+      <matplotlib.axis.YTick at 0x1f91a8393c8>,
+      <matplotlib.axis.YTick at 0x1f91a820940>,
+      <matplotlib.axis.YTick at 0x1f91a841828>,
+      <matplotlib.axis.YTick at 0x1f91a841e48>,
+      <matplotlib.axis.YTick at 0x1f91a8493c8>,
+      <matplotlib.axis.YTick at 0x1f91a849908>,
+      <matplotlib.axis.YTick at 0x1f91a808f60>],
      <a list of 10 Text yticklabel objects>)
 
 
@@ -1791,26 +1883,26 @@ plt.yticks(np.linspace(0,0.8,20,endpoint=True))
 
 
 
-    ([<matplotlib.axis.YTick at 0x2a28ce6c160>,
-      <matplotlib.axis.YTick at 0x2a28ce679e8>,
-      <matplotlib.axis.YTick at 0x2a28d119320>,
-      <matplotlib.axis.YTick at 0x2a28d119780>,
-      <matplotlib.axis.YTick at 0x2a28d119ef0>,
-      <matplotlib.axis.YTick at 0x2a28d120470>,
-      <matplotlib.axis.YTick at 0x2a28d1209b0>,
-      <matplotlib.axis.YTick at 0x2a28d120ef0>,
-      <matplotlib.axis.YTick at 0x2a28d119048>,
-      <matplotlib.axis.YTick at 0x2a28ce6ca20>,
-      <matplotlib.axis.YTick at 0x2a28d129e80>,
-      <matplotlib.axis.YTick at 0x2a28cedc4a8>,
-      <matplotlib.axis.YTick at 0x2a28cedc9b0>,
-      <matplotlib.axis.YTick at 0x2a28cedcef0>,
-      <matplotlib.axis.YTick at 0x2a28d139470>,
-      <matplotlib.axis.YTick at 0x2a28cedca90>,
-      <matplotlib.axis.YTick at 0x2a28d129400>,
-      <matplotlib.axis.YTick at 0x2a28d139860>,
-      <matplotlib.axis.YTick at 0x2a28d139da0>,
-      <matplotlib.axis.YTick at 0x2a28d141320>],
+    ([<matplotlib.axis.YTick at 0x1f91a8af240>,
+      <matplotlib.axis.YTick at 0x1f91a8a8b00>,
+      <matplotlib.axis.YTick at 0x1f91a91d0b8>,
+      <matplotlib.axis.YTick at 0x1f91ab1c898>,
+      <matplotlib.axis.YTick at 0x1f91ab240b8>,
+      <matplotlib.axis.YTick at 0x1f91ab24588>,
+      <matplotlib.axis.YTick at 0x1f91ab24ac8>,
+      <matplotlib.axis.YTick at 0x1f91ab24940>,
+      <matplotlib.axis.YTick at 0x1f91ab1c9b0>,
+      <matplotlib.axis.YTick at 0x1f91a8f5f98>,
+      <matplotlib.axis.YTick at 0x1f91a8cd0f0>,
+      <matplotlib.axis.YTick at 0x1f91a8cd550>,
+      <matplotlib.axis.YTick at 0x1f91a8cda58>,
+      <matplotlib.axis.YTick at 0x1f91a8cde80>,
+      <matplotlib.axis.YTick at 0x1f91ab39518>,
+      <matplotlib.axis.YTick at 0x1f91a8cda20>,
+      <matplotlib.axis.YTick at 0x1f91ab14828>,
+      <matplotlib.axis.YTick at 0x1f91ab39908>,
+      <matplotlib.axis.YTick at 0x1f91ab39e48>,
+      <matplotlib.axis.YTick at 0x1f91ab443c8>],
      <a list of 20 Text yticklabel objects>)
 
 
@@ -1958,8 +2050,8 @@ ax.set_ylim(0,300)
 
 ## 1. 结论
 
-> Titanic号上乘客的生还率影响因素有：性别，船舱等级，年龄，同行亲友数，票价  
-其中：  
+Titanic号上乘客的生还率影响因素有：**性别，船舱等级，年龄，同行亲友数，票价**
+> 其中：  
 * 性别优先级最高，影响程度最大，女性的生还率远高于男性
 * 船舱等级影响程度次之，船舱等级越高，生还率越高
 * 0-10年龄段的乘客生还率高，其余年龄段相当，表现不明显
@@ -1970,6 +2062,6 @@ ax.set_ylim(0,300)
 ## 2. 改进建议
 
 > * 因年龄缺失值较多，所用均值填充的办法会使年龄集中于均值，影响后续的分析准确度，可考虑其他填充方式
-> * 对Name，Ticket，Cabin等字段，直接分析较难，但可结合相关历史资料，进行辅助分析 
-> * 所用数据集仅为训练集，只占总乘客数的1/3，叠加上测试集能使结果更为准确
-> * 可考虑使用机器学习的相关算法做预测，进一步佐证描述性分析
+* 对Name，Ticket，Cabin等字段，直接分析较难，但可结合相关历史资料，进行辅助分析 
+* 所用数据集仅为训练集，只占总乘客数的1/3，叠加上测试集能使结果更为准确
+* 可考虑使用机器学习的相关算法做预测，进一步佐证描述性分析
